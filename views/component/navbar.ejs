@@ -1,0 +1,43 @@
+<nav class="bg-body-tertiary d-flex bg-light py-3 align-items-center border-bottom justify-content-between">
+    <div class="d-flex">
+        <div class="mx-4">
+            <a href="#" class="navbar-brand fs-1">
+                <span class="fw-bolder" style="color: #3D8493;">P</span>
+                <span class="fw-bolder" style="color: #D89F65;">O</span>
+                <span class="fw-bolder" style="color: #4A5C2F;">S</span>
+            </a>
+        </div>
+        <div class="ms-5">
+            <form class="d-flex form-search" role="search" style="height: 50px; width: 130%;">
+                <input class="form-control " type="search" placeholder="Search product or any order..."
+                    aria-label="Search">
+                <button class="btn btn-outline" type="submit"><i class="bi bi-search text-black"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="d-flex">
+        <i class="bi bi-calendar4 me-2"></i>
+        <span id="datetime"></span>
+    </div>
+</nav>
+
+<script>
+    // สร้างฟังก์ชันสำหรับแสดงวันที่และเวลา
+    function displayDateTime() {
+        // สร้างวัตถุ Date
+        var now = new Date();
+
+        // ดึงข้อมูลวันที่และเวลา
+        var date = now.toLocaleDateString();
+        var time = now.toLocaleTimeString();
+
+        // แสดงข้อมูลใน element ที่มี id="datetime"
+        document.getElementById("datetime").innerHTML =  date + " " + "Time: " + time;
+    }
+
+    // เรียกใช้ฟังก์ชันทุก 1 วินาที (1000 มิลลิวินาที)
+    setInterval(displayDateTime, 1000);
+
+    // ให้แสดงวันที่และเวลาเมื่อโหลดหน้าเว็บ
+    displayDateTime();
+</script>
